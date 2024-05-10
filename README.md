@@ -46,9 +46,12 @@ class Solution {
 }
 
 2. Roman to integer --------------------------------- using hashmap ---------------------------------------------------------------
+
    
 class Solution {
+   
     public int romanToInt(String s) {
+     
         Map<Character,Integer>m = new HashMap<>();
         m.put('I',1);
         m.put('V',5);
