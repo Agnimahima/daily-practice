@@ -83,16 +83,21 @@ class Solution {
 
    
 class Solution {
+
     public String longestCommonPrefix(String[] strs) {
+    
         if (strs == null || strs.length == 0)
             return "";
+            
         String prefix = strs[0];
+        
         for (String s : strs)
             while (s.indexOf(prefix) != 0)
                 prefix = prefix.substring(0, prefix.length() - 1);
         return prefix;
     }
 }
+
 
  Valid Parentheses-------------------------------------------------------------------------------------------------
 
@@ -115,16 +120,18 @@ public class Solution {
 
 
 class Solution {
+
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<Character>(); // create an empty stack
-        for (char c : s.toCharArray()) { // loop through each character in the string
-            if (c == '(') // if the character is an opening parenthesis
-                stack.push(')'); // push the corresponding closing parenthesis onto the stack
-            else if (c == '{') // if the character is an opening brace
-                stack.push('}'); // push the corresponding closing brace onto the stack
+    
+      Stack<Character> stack = new Stack<Character>();
+        // create an empty stack
+      for (char c : s.toCharArray()) {
+            if (c == '(') 
+                stack.push(')'); 
+            else if (c == '{') 
+                stack.push('}'); 
             else if (c == '[')
-            
-                stack.push(']'); // push the corresponding closing bracket onto the stack
+                stack.push(']');  
             else if (stack.isEmpty() || stack.pop() != c) // if the character is a closing bracket
                 return false;
         }
