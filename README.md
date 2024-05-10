@@ -3,6 +3,7 @@
 Palindrome Number------------------------------------------------------------------------------------------------------
 
 class Solution {
+    
      public boolean isPalindrome(int x) {
         if(x<0)
         { return false;
@@ -25,6 +26,7 @@ class Solution {
 
 
 class Solution {
+
     public int[] twoSum(int[] nums, int target) {
         int targetarray[] = new int[2];
          
