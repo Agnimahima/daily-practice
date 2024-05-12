@@ -1,6 +1,6 @@
 # daily-practice
 
-Palindrome Number------------------------------------------------------------------------------------------------------
+1-Palindrome Number------------------------------------------------------------------------------------------------------
 
 class Solution {
     
@@ -21,8 +21,7 @@ class Solution {
     }
 };
 
-
-2. Two Sum -----------------------------------------------------------------------------------------------------------
+2- Two Sum -----------------------------------------------------------------------------------------------------------
 
 class Solution {
 
@@ -47,7 +46,7 @@ class Solution {
     }
 }
 
-2. Roman to integer --------------------------------- using hashmap ---------------------------------------------------------------
+3- Roman to integer --------------------------------- using hashmap ---------------------------------------------------------------
 
    
 class Solution {
@@ -79,7 +78,7 @@ class Solution {
     }
 }
 
-4. Longest Common Prefix ------------------------------------------------------------------------------------------
+4- Longest Common Prefix ------------------------------------------------------------------------------------------
 
    
 class Solution {
@@ -99,7 +98,7 @@ class Solution {
 }
 
 
- Valid Parentheses-------------------------------------------------------------------------------------------------
+5- Valid Parentheses-------------------------------------------------------------------------------------------------
 
 public class Solution {
 
@@ -139,7 +138,7 @@ class Solution {
     }
 }
 
- Merging two sorted list-------------------------------------------------------------------------------------------------
+ 6- Merging two sorted list-----------------------------------------------------------------------------------------------
 
  /**
  Merge two sorted linked lists and return it as a new list. The new list should be made by
@@ -194,7 +193,7 @@ public class Main {
     }
 }   
 
-Remove Duplicates from Sorted Array---------------------------------------------------------------------------------------
+7- Remove Duplicates from Sorted Array-----------------------------------------------------------------------------------
 
 Input: nums = [0,0,1,1,1,2,2,3,3,4]
 Output: nums = [0,1,2,3,4,_,_,_,_,_]
@@ -215,6 +214,89 @@ class Solution {
              } 
              return c+1;
          } 
+  }
+}
 
+
+ 8- Remove Element -----------------------------------------------------------------------------------------------------
+
+ Input: nums = [3,2,2,3], val = 3
+ Output: 2, nums = [2,2,_,_]
+
+ class Solution {
+ 
+    public int removeElement(int[] nums, int val)
+    {  int index=0;
+    for(int i=0;i<nums.length;i++){
+        if(nums[i]!=val){
+            nums[index]=nums[i];
+            index++;
+        }
+    }
+         return index;
+        
+
+    }
+}
+
+9- Find the Index of the First Occurrence in a String---------------------------------------------------------------------
+
+class Solution {
+
+    public int strStr(String haystack, String needle) {
+         int index= haystack.indexOf(needle);
+         return index;
+    }
+}
+
+class Solution {
+
+    public int strStr(String haystack, String needle) {
+        for(int i = 0, j = needle.length(); j<=haystack.length(); i++,j++){
+            if(haystack.substring(i,j).equals(needle)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+ class Solution {
+    /** this is the first kmp algorithm */
+    public int strStr(String haystack, String needle) {
+        int i =0;
+        char[] haystackCharArray = haystack.toCharArray();
+        char[] needleCharArray = needle.toCharArray();
+        for (i = 0; i <= haystackCharArray.length - needleCharArray.length; i++) { 
+            boolean match = true;
+            for (int j = 0; j < needleCharArray.length; j++) {
+                if (haystackCharArray[i + j] != needleCharArray[j]) {
+                    match = false;
+                    break;
+                }
+            }
+            if (match) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}   
+
+
+class Solution {
+
+    public int searchInsert(int[] nums, int target) {
+        int index=nums.length;
+       for(int i=0;i<nums.length;i++){
+            if(nums[i] == target)
+               return i;
+       }
+       //except for [1] it executes well not optimal
+       for(int i=0;i<nums.length-1;i++){
+         if(nums[i]<=target && target <= nums[i+1])
+               return i+1;
+       } 
+        return index;
+    }
 }
 }
