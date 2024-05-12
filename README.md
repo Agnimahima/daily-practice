@@ -24,8 +24,8 @@ class Solution {
 
 2. Two Sum -----------------------------------------------------------------------------------------------------------
 
-
 class Solution {
+
 
     public int[] twoSum(int[] nums, int target) {
         int targetarray[] = new int[2];
@@ -195,12 +195,13 @@ public class Main {
 }   
 
 Remove Duplicates from Sorted Array---------------------------------------------------------------------------------------
+
 Input: nums = [0,0,1,1,1,2,2,3,3,4]
-Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+Output: nums = [0,1,2,3,4,_,_,_,_,_]
 
 class Solution {
-    public int removeDuplicates(int[] nums) {
-       
+
+    public int removeDuplicates(int[] nums) {       
        if(nums.length==0)
          return 0;
         else
