@@ -138,5 +138,82 @@ class Solution {
         return stack.isEmpty();
     }
 }
-    
 
+ Merging two sorted list-------------------------------------------------------------------------------------------------
+
+ /**
+ Merge two sorted linked lists and return it as a new list. The new list should be made by
+ splicing together the nodes of the first two lists.
+ */
+public class Main {
+
+       public static ListNode mergeTwoLists(ListNode n1, ListNode n2) {
+        if(n1==null)
+         return n2;                  //main logic
+        if(n2==null)
+         return n1; 
+    
+       if(n1.val <= n2.val){
+        n1.next= mergeTwoLists(n1.next,n2);
+         return n1;
+       }    
+        else{
+          n2.next= mergeTwoLists(n1,n2.next);
+          return n2;
+       }      
+          
+    }
+    public static void main(String[] args){
+        ListNode n1 = new ListNode(1);
+        ListNode n11 = new ListNode(2);
+        ListNode n111 = new ListNode(4);
+        n1.next = n11;
+        n11.next = n111;
+        ListNode n2 = new ListNode(1);
+        ListNode n22 = new ListNode(3);
+        ListNode n222 = new ListNode(4);
+        n2.next = n22;
+        n22.next = n222;
+
+        ListNode node = mergeTwoLists(n1, n2);
+        printListValues(node);
+    }
+    private static void printListValues(ListNode node) {
+        while(node!=null){
+            System.out.print(node.val);
+            if(node.next!=null){
+                System.out.print("->");
+            }
+            node = node.next;
+        }
+    }
+    public static class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+    }
+}   
+
+Remove Duplicates from Sorted Array---------------------------------------------------------------------------------------
+Input: nums = [0,0,1,1,1,2,2,3,3,4]
+Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+       
+       if(nums.length==0)
+         return 0;
+        else
+         {   int c=0;
+             for(int i=1;i<nums.length;i++)
+             {
+                 if(nums[c]!=nums[i])
+                 {
+                     nums[++c]=nums[i];
+                 }
+             } 
+             return c+1;
+         } 
+
+}
+}
