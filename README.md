@@ -261,7 +261,9 @@ class Solution {
     }
 
  class Solution {
+ 
     /** this is the first kmp algorithm */
+    
     public int strStr(String haystack, String needle) {
         int i =0;
         char[] haystackCharArray = haystack.toCharArray();
